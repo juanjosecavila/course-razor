@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>warnings</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>course_razor</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="NewFolder\**" />
+    <Content Remove="NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\dataTables.dataTables.css" />
+    <Content Remove="wwwroot\css\dataTables.dataTables.min.css" />
+    <Content Remove="wwwroot\js\dataTables.js" />
+    <Content Remove="wwwroot\js\dataTables.min.js" />
+    <Content Remove="wwwroot\js\jquery-3.7.1.js" />
+    <Content Remove="wwwroot\js\jquery-3.7.1.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\dataTables.dataTables.css" />
+    <None Include="wwwroot\css\dataTables.dataTables.min.css" />
+    <None Include="wwwroot\js\dataTables.js" />
+    <None Include="wwwroot\js\dataTables.min.js" />
+    <None Include="wwwroot\js\jquery-3.7.1.js" />
+    <None Include="wwwroot\js\jquery-3.7.1.min.js" />
+  </ItemGroup>
+
+</Project>

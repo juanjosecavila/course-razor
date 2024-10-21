@@ -1,0 +1,52 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+
+<table id="dataTable" class="display" style="width:100%">
+    <thead>
+    <th>
+        Name
+    </th>
+    <th>
+        Pos
+    </th>
+    <th>
+        c1
+    </th>
+    <th>
+        c2
+    </th>
+    <th>
+        date
+    </th>
+    <th>
+        salary
+    </th>
+    </thead>
+
+</table>
+
+@section Scripts {
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            new DataTable('#dataTable', {
+                ajax: '@Url.Page("Privacy", "Data")',
+                columns: [
+                    { data: 'name' },
+                    { data: 'hr.position' },
+                    { data: 'contact.0' },
+                    { data: 'contact.1' },
+                    { data: 'hr.start_date' },
+                    { data: 'hr.salary' }
+                ],
+                processing: true
+            });
+        });
+    </script>
+}
