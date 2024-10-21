@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace course_razor.Pages
 {
@@ -14,24 +16,25 @@ namespace course_razor.Pages
 
         public void OnGet()
         {
+            _logger.LogInformation("This is an info log message.");
         }
 
-        public class YourPageModel : PageModel
+        // Move OnGetData method to the outer class
+        public JsonResult OnGetData()
         {
-            public JsonResult OnGetData()
+            var data = new List<object>
             {
-                var data = new List<object>
-        {
-            new { name = "John", hr = new { position = "Manager", start_date = "2012-01-01", salary = "$120,000" }, contact = new[] { "john@example.com", "+1-800-123-4567" } },
-            new { name = "Jane", hr = new { position = "Developer", start_date = "2015-05-15", salary = "$90,000" }, contact = new[] { "jane@example.com", "+1-800-765-4321" } }
-        };
+                new { name = "John", hr = new { position = "Manager", start_date = "2012-01-01", salary = "$120,000" }, contact = new[] { "john@example.com", "+1-800-123-4567" } },
+                new { name = "Jane", hr = new { position = "Developer", start_date = "2015-05-15", salary = "$90,000" }, contact = new[] { "jane@example.com", "+1-800-765-4321" } }
+            };
 
-                var a = new JsonResult(data);
-                Console.WriteLine("AHORA");
-                Console.WriteLine(a);
-                return a;
-            }
+            var result = new JsonResult(data);
+
+            // Use logger in the outer class
+            _logger.LogInformation("Returning data via JSON.");
+            _logger.LogInformation("Logging JsonResult: {@Result}", result);  // Use structured logging if needed
+
+            return result;
         }
     }
-
 }
