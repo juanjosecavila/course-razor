@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\course-razor.props" />
+</Project>

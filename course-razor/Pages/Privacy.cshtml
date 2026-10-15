@@ -36,7 +36,15 @@
     <script type="text/javascript">
         $(document).ready(function () {
             new DataTable('#dataTable', {
-                ajax: '@Url.Page("Privacy", "Data")',
+                ajax: {
+                    url: '@Url.Page("Privacy", "Data")',
+                    type: 'GET',
+                    data: function (d) {
+                        d.quickSearch = d.search.value;
+                        d.col = d.order[0].column;
+                        d.dir = d.order[0].dir;
+                    }
+                },
                 columns: [
                     { data: 'name' },
                     { data: 'hr.position' },
@@ -45,7 +53,8 @@
                     { data: 'hr.start_date' },
                     { data: 'hr.salary' }
                 ],
-                processing: true
+                processing: true,
+                serverSide: true
             });
         });
     </script>
