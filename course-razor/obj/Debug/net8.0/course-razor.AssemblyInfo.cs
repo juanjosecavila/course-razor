@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("course-razor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89fef77620f561397bd0850dacdd6925d2f327d9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+144cb825169653aa894c8f9f3d749d4ac7bea09c")]
 [assembly: System.Reflection.AssemblyProductAttribute("course-razor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("course-razor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
